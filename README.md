@@ -23,16 +23,27 @@ by editing the code or by matching my database:
 The goal is to load the below data into an SQL schema of my design. 
 
 user_id: unique ID for a platform user
+
 project_id: unique ID for a platform project
+
 day: the date of the occurence for this metric
+
 metric_name: the name of a count metric associated with the platform
+
 metric_value: the actual count of the metric
+
 user_organization: "name" (just a number) of the organization that the user is a part of
+
 user_region: the region where the user is based
+
 project_owner: the "name" (just a number) of the organization that owns this project
+
 user_age: age pf the user
+
 user_title: age of the user
+
 project_multi: denotes whether multiple organization have access to this project
+
 project_purpose: denotes the purpose of this project, which can be many different forms, some of which are not related to the legal field
 
 A project is owned by a single organization, but can have users associated with it from multiple other organizations.
