@@ -5,7 +5,7 @@ from datetime import date
 # Constants
 
 # Enter the database and login information here
-database = 'Everlaw'
+database = 'Database'
 user = 'root'
 password = '1234'
 host = 'localhost'
@@ -118,7 +118,7 @@ def transform_data(dataframe):
     If the date is missing, the function will assume the intended date is the current date. This logic can be removed by
     commenting out the first line, marked below.
     The criteria for valid data is: user_id, user_org, project_id, project_onwer, project_purpose, project_multi,
-    metric_name, and metrics_value must all be present. In addition, if project_onwer != user_org, then project_multi
+    metric_name, and metrics_value must all be present. In addition, if project_owner != user_org, then project_multi
     must be true. Any data that doesn't meet this criteria will be moved into the invalid data table.
 
     Parameters
@@ -167,8 +167,8 @@ def transform_data(dataframe):
 def load_data(dataframe, engine):
     """
     This function takes the valid metrics, and loads it into the tables prepared by the create_tables function.
-    Note that it will append the data if the table already exists. This shouldn't come up, but would allow the function
-     to be reused down the line.
+    Note that it will append the data if the table already exists. This shouldn't come up when called for table
+    inititalziation, but would allow the function to be reused down the line.
 
     Parameters
     ----------
