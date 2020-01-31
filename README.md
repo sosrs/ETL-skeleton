@@ -38,7 +38,7 @@ user_region: the region where the user is based
 
 project_owner: the "name" (just a number) of the organization that owns this project
 
-user_age: age pf the user
+user_age: age of the user
 
 user_title: age of the user
 
