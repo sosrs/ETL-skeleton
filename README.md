@@ -10,12 +10,12 @@ Below, for completion, I detail the parameters of my portion of the project and 
    1. Pandas library: https://pypi.org/project/pandas/
    2. SQLAlchemy: https://pypi.org/project/SQLAlchemy/1.3.11/
       1. Both this and Pandas are packaged in the Anaconda distribution. It may be easier to set up an environment with that, or use the Conda package management system to only download those two libraries.
-2. Move the code files (ETL_functions.py and SShah_Data_ETL.py) and the CSV to be loaded into
+2. Move the code files (ETL_functions.py and Data_ETL_script.py) and the CSV to be loaded into
 the same directory.
 3. Make sure the CSV is named “dataset.csv”.
 4. I used a MySQL database for my script. Ensure the database can be accessed by the script, either
 by editing the code or by matching my database:
-   1. Open the SShah_Data_ETL.py file. Below the import statements, there are a series of variable assignments to store the database login information. Enter in the username, password, database, and database IP address as strings.
+   1. Open the Data_ETL_script.py file. Below the import statements, there are a series of variable assignments to store the database login information. Enter in the username, password, database, and database IP address as strings.
    2. Set the username, password, and database name to “root”,”1234”, and “database”, respectively. Set up the MySQL database on the local machine.
 5. Run SShah_Data_ETL.py.
 
