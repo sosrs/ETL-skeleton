@@ -3,7 +3,7 @@
 ## Purpose
 The purpose of this script is to extract, transform, and load data into a MySQL database for further analysis. My role in the project that used this was to design the schema to load the data into, and I also wrote this script to complete that task. The project is now defunct, but I have maintained the script to reference and build on for future projects.
 
-Below, for completion, I detail the parameters of my portion of the project and my design considerations
+Below, for completion, I detail the parameters of my portion of the project and my design considerations.
 
 ## Instructions
 1. I make use of the following libraries. Install them on whatever computer/environment you areworking in. I have provided links:
