@@ -1,7 +1,9 @@
 # ETL skeleton
 
 ## Purpose
-The purpose of this script is to extract, transform, and load data into an existing MySQL database for further analysis. My role in the project that used this was to design the schema to load the data into and write this script. The project is now defunct, but I have maintained the script to reference and build on for future projects.
+The purpose of this script is to extract, transform, and load data into a MySQL database for further analysis. My role in the project that used this was to design the schema to load the data into, and I also wrote this script to complete that task. The project is now defunct, but I have maintained the script to reference and build on for future projects.
+
+Below, for completion, I detail the parameters of my portion of the project and my design considerations
 
 ## Instructions
 1. I make use of the following libraries. Install them on whatever computer/environment you areworking in. I have provided links:
@@ -17,12 +19,31 @@ by editing the code or by matching my database:
    2. Set the username, password, and database name to “root”,”1234”, and “database”, respectively. Set up the MySQL database on the local machine.
 5. Run SShah_Data_ETL.py.
 
+## Data Parameters
+The goal is to load the below data into an SQL schema of my design. 
+
+user_id: unique ID for a platform user
+project_id: unique ID for a platform project
+day: the date of the occurence for this metric
+metric_name: the name of a count metric associated with the platform
+metric_value: the actual count of the metric
+user_organization: "name" (just a number) of the organization that the user is a part of
+user_region: the region where the user is based
+project_owner: the "name" (just a number) of the organization that owns this project
+user_age: age pf the user
+user_title: age of the user
+project_multi: denotes whether multiple organization have access to this project
+project_purpose: denotes the purpose of this project, which can be many different forms, some of which are not related to the legal field
+
+A project is owned by a single organization, but can have users associated with it from multiple other organizations.
+
 ## Data Model and Schema definitions
+### Schema
 I designed a schema containing four entities: a table of Users, a table of Projects, a table of valid Metrics,
 and a table of Fails that lists the failed metrics. For this project, I assumed that while data may be
 incomplete, it would not be inaccurate (e.g. I would not get two different answers for whether a project
 allowed multi-organization access, but I could receive a null value). Finally, I assumed that items would
-be static users would not move organizations or age.
+be static; users would not move organizations or age.
 
 Users lists each user that recorded a metric in the data, as well as all of the listed data that pertains to
 said user. I did not enforce data completion in this table, as I would expect users might be added
@@ -42,19 +63,22 @@ searching through data types that weren’t explicitly joined in. Another advant
 metrics into multiple tables is that different data might have different security restrictions on it.
 However, I considered that beyond the scope of this problem.
 
-Fails lists any rows that did not meet the validation criteria. The validation criteria are: user_id, user_org,
-project_id, project_owner, project_purpose, project_multi, metric_name, and metric_value must all be
-present, and if project_owner was not the same as user_org then project_multi must be true. I chose
-these criteria because it seemed that they gave the metric the context it needed to be meaningful; they
-can be adjusted depending on the analysts’ needs. The final metric is just the permissions criteria to
-access the project. I created a table in case analysts would want to review these failed metrics, whether
-to keep track of them or to attempt to reconstruct the metric. You may note that while I include user_id
+Fails lists any rows that did not meet the validation criteria. The validation criteria are: 
+
+* user_id, user_org, project_id, project_owner, project_purpose, project_multi, metric_name, and metric_value must all be
+present
+* if project_owner was not the same as user_org, then project_multi must be true. (permission must be granted)
+
+I chose these criteria because it seemed that they gave the metric the context it needed to be meaningful; they
+can be adjusted depending on the analysts’ needs. I created a table in case analysts would want to review these failed metrics, whether
+to keep track of them to identify the error or to attempt to reconstruct the metric. You may note that while I include user_id
 and project_id as columns, I have not set them to foreign keys. This is because currently my only source
 of valid projects and users is valid data, and if one of these entities provides no valid data I do not add it
 to their respective tables. If another source could verify these entity lists, I could instate the foreign key
 constraint. If storing the failed metrics is not necessary or feasible, it can easily be excised, with
 comments in the code as to where.
 
+### Design Considerations
 I set up my schema to describe the 3 main entities that seemed to be of interest in this dataset (and
 failures, which I wasn’t sure would or would not be of interest). Each metric is tagged to its relevant user
 and project, and analysts can easily join their tables to fit to their models. That being said, there are two
