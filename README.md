@@ -15,11 +15,11 @@ the same directory.
 3. Make sure the CSV is named “dataset.csv”.
 4. I used a MySQL database for my script. Ensure the database can be accessed by the script, either by editing the code or by matching my database:
    1. Open the Data_ETL_script.py file. Below the import statements, there are a series of variable assignments to store the database login information. Enter in the username, password, database, and database IP address as strings.
-   2. Set the username, password, and database name to “root”,”1234”, and “database”, respectively. Set up the MySQL database on the local machine.
+   2. Alternatively, set the username, password, and database name to “root”,”1234”, and “database”, respectively. Set up the MySQL database on the local machine.
 5. Run SShah_Data_ETL.py.
 
 ## Data Parameters
-The goal is to load the below data into an SQL schema of my design. 
+The goal is to load the below data into a SQL schema of my design. 
 
 user_id: unique ID for a platform user
 
