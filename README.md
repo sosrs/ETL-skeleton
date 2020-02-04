@@ -1,7 +1,7 @@
 # ETL skeleton
 
 ## Purpose
-The purpose of this script is to extract, transform, and load data into a MySQL database for further analysis. My role in the project that used this was to design the schema to load the data into, and I also wrote this script to complete that task. The project is now defunct, but I have maintained the script to reference and build on for future projects.
+The purpose of this script is to extract, transform, and load data into a MySQL database for further analysis. My role in this project was to design the schema to load the data into, and populate it with the initial data. The project is now defunct, but I have maintained the script to reference and build on for future projects, with references to proprietary information scrubbed.
 
 Below, for completion, I detail the parameters of my portion of the project and my design considerations.
 
@@ -13,8 +13,7 @@ Below, for completion, I detail the parameters of my portion of the project and 
 2. Move the code files (ETL_functions.py and Data_ETL_script.py) and the CSV to be loaded into
 the same directory.
 3. Make sure the CSV is named “dataset.csv”.
-4. I used a MySQL database for my script. Ensure the database can be accessed by the script, either
-by editing the code or by matching my database:
+4. I used a MySQL database for my script. Ensure the database can be accessed by the script, either by editing the code or by matching my database:
    1. Open the Data_ETL_script.py file. Below the import statements, there are a series of variable assignments to store the database login information. Enter in the username, password, database, and database IP address as strings.
    2. Set the username, password, and database name to “root”,”1234”, and “database”, respectively. Set up the MySQL database on the local machine.
 5. Run SShah_Data_ETL.py.
