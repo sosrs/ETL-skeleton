@@ -6,7 +6,7 @@ The purpose of this script is to extract, transform, and load data into a MySQL 
 Below, for completion, I detail the parameters of my portion of the project and my design considerations.
 
 ## Instructions
-1. I make use of the following libraries. Install them on whatever computer/environment you areworking in. I have provided links:
+1. I make use of the following libraries. Install them on whatever computer/environment you are working in. I have provided links:
    1. Pandas library: https://pypi.org/project/pandas/
    2. SQLAlchemy: https://pypi.org/project/SQLAlchemy/1.3.11/
       1. Both this and Pandas are packaged in the Anaconda distribution. It may be easier to set up an environment with that, or use the Conda package management system to only download those two libraries.
