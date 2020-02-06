@@ -5,7 +5,7 @@ from datetime import date
 # Constants
 
 # Enter the database and login information here
-database = 'Database'
+database = 'database'
 user = 'root'
 password = '1234'
 host = 'localhost'
