@@ -83,8 +83,8 @@ I chose these criteria because it seemed that they gave the metric the context i
 can be adjusted depending on the analysts’ needs. I created a table in case analysts would want to review these failed metrics, whether
 to keep track of them to identify the error or to attempt to reconstruct the metric. You may note that while I include user_id
 and project_id as columns, I have not set them to foreign keys. This is because currently my only source
-of valid projects and users is valid data, and if one of these entities provides no valid data I do not add it
-to their respective tables. If another source could verify these entity lists, I could instate the foreign key
+of valid projects and users are valid metrics, and if one of these entities provides no valid metrics I do not add it
+to the project or user tables. If another source could verify these entity lists, I could instate the foreign key
 constraint. If storing the failed metrics is not necessary or feasible, it can easily be excised, with
 comments in the code as to where.
 
