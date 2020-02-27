@@ -43,7 +43,7 @@ user_title: age of the user
 
 project_multi: denotes whether multiple organization have access to this project
 
-project_purpose: denotes the purpose of this project, which can be many different forms, some of which are not related to the legal field
+project_purpose: denotes the purpose of this project, which can be many different forms
 
 A project is owned by a single organization, but can have users associated with it from multiple other organizations.
 
